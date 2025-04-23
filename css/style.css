@@ -19,6 +19,9 @@
     --text-color: #655945;
 }
 
+
+/* header style */
+
 header {
     background-color: var(--primary-color);
     height: 80px;
@@ -88,6 +91,9 @@ header .wrapper .contact button {
     background-color: #fff;
     box-shadow: 6px 6px 0 #f3cc89;
 }
+
+
+/* spotlight style */
 
 #spotlight {
     background-image: url(/images/bg_main.png);
@@ -172,6 +178,8 @@ header .wrapper .contact button {
     right: 0; */
 }
 
+/* feature style */
+
 #featurs {
     background-color: #FFF3E1;
     height: 80px;
@@ -213,6 +221,8 @@ header .wrapper .contact button {
     font-size: 20px;
     color: var(--primary-color);
 }
+
+/* stoey education */
 
 #edu_story .wrapper {
     display: flex;
@@ -348,6 +358,8 @@ header .wrapper .contact button {
     right: -20px;
 }
 
+/* teaching style */
+
 
 #teaching {
     background-color: #F9F7F4;
@@ -391,6 +403,8 @@ header .wrapper .contact button {
     display: block;
 }
 
+
+/*kids section style */
 
 
 #kids {
@@ -500,6 +514,8 @@ header .wrapper .contact button {
     width: 100%;
 }
 
+/* kids subjects */
+
 #subjects {
     background-color: #F9F7F4;
     padding: 30px 0;
@@ -558,6 +574,8 @@ header .wrapper .contact button {
     font-weight: 600;
     margin: 0;
 }
+
+/* opportunities style */
 
 
 #opportunities {
@@ -712,6 +730,8 @@ header .wrapper .contact button {
     margin: 0 30px;
 }
 
+/* vedios style */
+
 #our_space {
     padding: 40px 20px;
 }
@@ -830,6 +850,9 @@ header .wrapper .contact button {
     color: #4a3f36;
 }
 
+
+/* testimonial */
+
 #testimonials {
     text-align: center;
     padding: 60px 20px;
@@ -918,6 +941,8 @@ header .wrapper .contact button {
     margin-top: 3px;
 }
 
+/* faq */
+
 .faq-section {
     background: #F9F7F4;
     padding: 60px 30px;
@@ -986,7 +1011,7 @@ header .wrapper .contact button {
     display: block;
 }
 
-
+/* blog */
 
 .blog-section {
     padding: 60px 40px;
@@ -1054,7 +1079,7 @@ header .wrapper .contact button {
     line-height: 1.4;
 }
 
-
+/* footer style */
 
 .footer {
     background-color: #8b1438;

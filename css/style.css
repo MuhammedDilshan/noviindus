@@ -33,6 +33,7 @@ header .wrapper {
     display: flex;
     justify-content: space-between;
     font-size: 18px;
+    align-items: center;
 }
 
 header .wrapper .logo {
@@ -89,8 +90,32 @@ header .wrapper .contact button {
     border-radius: 8px;
     color: var(--primary-color);
     background-color: #fff;
-    box-shadow: 6px 6px 0 #f3cc89;
 }
+
+.menu-toggle,
+.mobile-menu {
+    display: none;
+}
+
+.menu-toggle {
+    display: none;
+    /* hidden on desktop */
+    flex-direction: column;
+    justify-content: center;
+    gap: 5px;
+    width: 30px;
+    height: 24px;
+    cursor: pointer;
+}
+
+.menu-toggle .bar {
+    height: 3px;
+    width: 100%;
+    background-color: #fff;
+    border-radius: 2px;
+    transition: 0.3s ease;
+}
+
 
 
 /* spotlight style */
@@ -176,6 +201,38 @@ header .wrapper .contact button {
     width: 180px;
     /* position: fixed;
     right: 0; */
+}
+
+@keyframes float {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-15px);
+    }
+}
+
+@keyframes pulse {
+
+    0%,
+    100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.05);
+    }
+}
+
+#spotlight .wrapper .avathar .avathar_mentor img {
+    animation: float 3s ease-in-out infinite;
+}
+
+#spotlight .wrapper .avathar .avathar_winner img {
+    animation: pulse 2.5s ease-in-out infinite;
 }
 
 /* feature style */
@@ -406,7 +463,6 @@ header .wrapper .contact button {
 
 /*kids section style */
 
-
 #kids {
     padding: 50px 0;
 }
@@ -425,41 +481,56 @@ header .wrapper .contact button {
     color: var(--text-color);
 }
 
-#kids .kids_list {
-    display: flex;
-    justify-content: center;
-    gap: 26px;
+.kids_list {
+    position: relative;
 }
 
-#kids .kids_list .kids_item {
-    background-color: #FFF3E1;
+.kids_list .swiper-wrapper {
     display: flex;
+}
+
+.kids_item {
+    background-color: #fff3e1;
+    display: flex !important;
     padding: 14px;
-    width: 33%;
     border-radius: 26px;
+    height: 100%;
+    box-sizing: border-box;
+    gap: 10px;
 }
 
+.kids_left {
+    width: 60%;
+}
 
+.kids_right {
+    width: 40%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
 
-#kids .kids_list .kids_item .kids_left h6 {
+.kids_img {
+    width: 100px;
+}
+
+.kids_img img {
+    display: block;
+    width: 100%;
+}
+
+.kids_left h6 {
     font-size: 20px;
     margin-bottom: 16px;
     font-weight: 800;
     color: var(--primary-color);
 }
 
-#kids .kids_list .kids_item .kids_left p {
+.kids_left p {
     font-size: 18px;
     font-weight: 400;
     color: var(--primary-color);
     margin-bottom: 16px;
-}
-
-#kids .kids_list .kids_item .kids_left .kids_read {
-    background-color: var(--primary-color);
-    padding: 10px 17px;
-    border-radius: 6px;
-    color: #fff;
 }
 
 .button-container {
@@ -470,7 +541,6 @@ header .wrapper .contact button {
 .view-all-button {
     position: relative;
     background-color: var(--primary-color);
-
     color: white;
     font-size: 14px;
     font-weight: 400;
@@ -483,7 +553,7 @@ header .wrapper .contact button {
 }
 
 .button-container::before {
-    content: '';
+    content: "";
     position: absolute;
     top: 0;
     left: 0;
@@ -501,18 +571,12 @@ header .wrapper .contact button {
     display: inline-block;
 }
 
-#kids .kids_list .kids_item .kids_right {
-    width: 40%;
+.swiper-button-next,
+.swiper-button-prev {
+    color: var(--primary-color);
+    top: 45%;
 }
 
-#kids .kids_list .kids_item .kids_right .kids_img {
-    width: 100px;
-}
-
-#kids .kids_list .kids_item .kids_right .kids_img img {
-    display: block;
-    width: 100%;
-}
 
 /* kids subjects */
 
@@ -530,15 +594,10 @@ header .wrapper .contact button {
 }
 
 #subjects .wrapper h5 span {
-    font-size: 42px;
     font-weight: 700;
-    color: var(--text-color);
 }
 
 .subjects-container {
-    display: flex;
-    gap: 1rem;
-    overflow-x: auto;
     padding: 1rem 0;
 }
 
@@ -546,18 +605,23 @@ header .wrapper .contact button {
     background-color: #fff5e7;
     border-radius: 12px;
     padding: 1rem;
-    min-width: 150px;
     text-align: center;
-    flex-shrink: 0;
     box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+    min-width: 150px;
+    height: 200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 .icon-area {
     background-color: var(--primary-color);
     padding: 1rem;
     border-radius: 8px;
-    margin-bottom: 0.5rem;
+    margin: 0 auto 0.5rem;
     height: 100px;
+    width: 100px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -573,6 +637,12 @@ header .wrapper .contact button {
     color: var(--primary-color);
     font-weight: 600;
     margin: 0;
+}
+
+/* Swiper navigation */
+.swiper-button-next,
+.swiper-button-prev {
+    color: var(--primary-color) !important;
 }
 
 /* opportunities style */
@@ -766,7 +836,6 @@ header .wrapper .contact button {
     display: block;
 }
 
-
 #toefl_exam {
     padding: 40px 20px;
     background: #fdf6f0;
@@ -791,39 +860,37 @@ header .wrapper .contact button {
     border: none;
     padding: 10px 20px;
     border-radius: 8px;
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    cursor: pointer;
     font-size: 14px;
     position: relative;
     top: -10px;
     box-shadow: 3px 3px 0 #f3cc89;
+    cursor: pointer;
 }
 
-#toefl_exam .categories ul {
-    list-style: none;
-    display: flex;
-    gap: 30px;
-    padding: 0;
-    margin: 0;
+.toeflSlider {
+    overflow: hidden;
+    padding: 10px 0 !important;
 }
 
-#toefl_exam .categories li {
+.swiper-slide {
+    width: auto;
+}
+
+.course_card {
     background: #fff4e7;
     border-radius: 20px;
     overflow: hidden;
-    position: relative;
     box-shadow: 6px 6px 0 var(--primary-color);
     transition: transform 0.3s;
     padding-bottom: 20px;
+    width: 300px;
 }
 
-#toefl_exam .categories li:hover {
+.course_card:hover {
     transform: translateY(-5px);
 }
 
-#toefl_exam .img_container {
+.img_container {
     width: 100%;
     height: 180px;
     overflow: hidden;
@@ -831,20 +898,20 @@ header .wrapper .contact button {
     border-top-right-radius: 20px;
 }
 
-#toefl_exam .img_container img {
+.img_container img {
     width: 100%;
     height: 100%;
     object-fit: cover;
 }
 
-#toefl_exam .categories h4 {
+.course_card h4 {
     margin: 15px;
     font-size: 18px;
     font-weight: 600;
     color: var(--primary-color);
 }
 
-#toefl_exam .categories p {
+.course_card p {
     margin: 0 15px;
     font-size: 14px;
     color: #4a3f36;
@@ -1080,15 +1147,14 @@ header .wrapper .contact button {
 }
 
 /* footer style */
-
-.footer {
+footer {
     background-color: #8b1438;
     color: #fff;
     font-family: Arial, sans-serif;
     padding: 2rem;
 }
 
-.footer-content {
+.footer_content {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
@@ -1096,36 +1162,46 @@ header .wrapper .contact button {
     padding-bottom: 2rem;
 }
 
-.footer-column {
+.footer_column {
     flex: 1 1 200px;
     margin: 1rem;
 }
 
-.logo {
-    font-size: 1.5rem;
+footer .logo {
+    font-size: 200px;
     font-weight: bold;
+    margin-right: 150px;
 }
 
-.footer-column h4 {
+footer .logo img {
+    width: 100%;
+    display: block;
+}
+
+.footer_column .text_location {
+    line-height: 1.5rem;
+}
+
+.footer_column h4 {
     margin-bottom: 1rem;
     font-weight: bold;
 }
 
-.footer-column ul {
+.footer_column ul {
     list-style: none;
     padding: 0;
 }
 
-.footer-column ul li {
+.footer_column ul li {
     margin-bottom: 0.5rem;
 }
 
-.footer-column a {
+.footer_column a {
     color: #fff;
     transition: 0.3s;
 }
 
-.footer-column a:hover {
+.footer_column a:hover {
     color: #ffd1d1;
 }
 
@@ -1143,7 +1219,7 @@ header .wrapper .contact button {
     background-repeat: no-repeat;
 }
 
-.footer-bottom {
+.footer_bottom {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
@@ -1152,7 +1228,7 @@ header .wrapper .contact button {
     font-size: 0.9rem;
 }
 
-.footer-bottom a {
+.footer_bottom a {
     color: #fff;
     margin-left: 1rem;
 }
@@ -1160,4 +1236,314 @@ header .wrapper .contact button {
 .policy-links {
     display: flex;
     gap: 1rem;
+}
+
+@media (max-width:1280px) {
+
+    #spotlight .wrapper .avathar .avathar_mentor img,
+    #spotlight .wrapper .avathar .avathar_winner img {
+        width: 390px;
+    }
+
+    #spotlight .wrapper .demo_class {
+        display: none;
+    }
+
+    #featurs .wrapper .featurs_container li img {
+        height: 30px;
+        width: 30px;
+    }
+
+    #featurs .wrapper .featurs_container li p {
+        font-size: 18px;
+    }
+
+}
+
+@media (max-width:1100px) {
+    #teaching .wrapper {
+        flex-direction: column-reverse;
+    }
+
+    #teaching .wrapper .teach_img {
+        width: 80%;
+        margin: 0 auto 40px;
+    }
+
+    #teaching .wrapper .tech_content {
+        width: 80%;
+        margin: 0 auto;
+    }
+
+    #spotlight .wrapper .avathar .avathar_mentor img,
+    #spotlight .wrapper .avathar .avathar_winner img {
+        width: 300px;
+    }
+
+    #featurs .wrapper .featurs_container {
+        flex-wrap: wrap;
+    }
+
+    #edu_story .wrapper .images .image_three {
+        right: -90px;
+    }
+}
+
+@media (max-width:1000px) {
+    #spotlight .wrapper .heading h1 {
+        font-size: 60px;
+    }
+
+    #spotlight .wrapper .heading {
+        margin-bottom: 20px;
+    }
+
+    #spotlight .wrapper .heading h3 {
+        font-size: 52px;
+    }
+
+    header .wrapper nav,
+    header .wrapper .contact {
+        display: none;
+    }
+
+    .menu-toggle {
+        display: block;
+        cursor: pointer;
+    }
+
+    .menu-toggle img {
+        width: 28px;
+    }
+
+    .mobile-menu {
+        display: none;
+        flex-direction: column;
+        background: #fff;
+        padding: 20px;
+        position: absolute;
+        top: 80px;
+        width: 100%;
+        z-index: 1000;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    .mobile-menu.active {
+        display: flex;
+    }
+
+    .mobile-menu li {
+        list-style: none;
+        margin-bottom: 10px;
+    }
+
+    .mobile-menu a {
+        color: var(--primary-color);
+        font-weight: 600;
+        text-decoration: none;
+    }
+
+    .mobile-contact {
+        margin-top: 15px;
+        font-size: 14px;
+        color: var(--primary-color);
+    }
+
+    .mobile-contact div {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        margin-bottom: 10px;
+    }
+
+    .menu-toggle {
+        display: flex;
+    }
+
+    #edu_story .wrapper .images {
+        width: 50%;
+    }
+
+    #edu_story .wrapper .images .image_three {
+        display: none;
+    }
+
+    #edu_story .wrapper .images .image_one {
+        right: unset;
+        left: 50px;
+    }
+
+    #edu_story .wrapper .images .image_two {
+        left: unset;
+        right: 20px;
+    }
+}
+
+@media (max-width:900px) {
+
+    #spotlight .wrapper .avathar .avathar_mentor img,
+    #spotlight .wrapper .avathar .avathar_winner img {
+        width: 200px;
+    }
+}
+
+@media (max-width:840px) {
+    #featurs .wrapper .featurs_container {
+        justify-content: center;
+        gap: 20px;
+
+    }
+
+    #featurs .wrapper .featurs_container li {
+        border-right: none;
+        padding-right: 0;
+    }
+}
+
+@media (max-width:800px) {
+    #featurs_two {
+        height: 180px;
+    }
+}
+
+@media (max-width:740px) {
+    #spotlight .wrapper .heading h1 {
+        font-size: 46px;
+    }
+
+    #spotlight .wrapper .heading h3 {
+        font-size: 30px;
+    }
+
+    #spotlight .wrapper .avathar .avathar_winner {
+        display: none;
+    }
+
+    #spotlight .wrapper .avathar {
+        justify-content: flex-start;
+    }
+
+    #edu_story .wrapper .images {
+        display: none;
+    }
+
+    #edu_story .wrapper {
+        justify-content: unset;
+    }
+
+    #edu_story .wrapper .content {
+        width: 100%;
+    }
+
+    #edu_story .wrapper .content .mission_vision,
+    #edu_story .wrapper .content .mission_vision {
+        flex-direction: column;
+    }
+
+    #edu_story .wrapper .content .mission_vision .mission,
+    #edu_story .wrapper .content .mission_vision .vision {
+        width: 80%;
+        margin: 80px auto 0;
+    }
+
+    #featurs_two .wrapper .featurs_container {
+        flex-wrap: wrap;
+    }
+}
+
+@media (max-width:640px) {
+    #toefl_exam .head button {
+        display: none;
+    }
+
+    #toefl_exam .head h3 {
+
+        font-size: 20px;
+    }
+
+    .faq-section h2,
+    .blog-header h2,
+    .blog-header span,
+    .faq-section span,
+    #our_space h3,
+    #our_space h3 span {
+        font-size: 26px;
+    }
+
+    #testimonials h3 {
+        font-size: 24px;
+    }
+
+    .faq-section {
+        padding: 0;
+    }
+
+    #spotlight .wrapper .heading h1 {
+        font-size: 30px;
+    }
+
+    #spotlight .wrapper .heading h3 {
+        font-size: 24px;
+    }
+
+}
+
+@media (max-width:550px) {
+    #edu_story .wrapper .content .mission_vision .mission {
+        margin-top: 160px;
+    }
+}
+
+@media (max-width:440px) {
+    #featurs {
+        height: 190px;
+    }
+
+    #opportunities .wrapper h3 {
+        font-size: 22px;
+    }
+
+    #opportunities .wrapper h3 span {
+        font-size: 24px;
+    }
+
+    #featurs_two .wrapper .featurs_container {
+        gap: 10px;
+    }
+
+    #spotlight .wrapper .avathar .avathar_mentor {
+        display: none;
+    }
+
+    #spotlight .wrapper .avathar .offer_avathar {
+        width: 100%;
+    }
+
+    #spotlight .wrapper .avathar .offers h3 {
+        padding: 0;
+        margin: 30px 0;
+    }
+
+    #spotlight .wrapper .avathar .offer_avathar .offer {
+        justify-content: center;
+    }
+
+    #edu_story .wrapper .content .mission_vision .mission {
+        margin-top: 200px;
+        width: 100%;
+    }
+
+    #edu_story .wrapper .content .mission_vision .vision {
+        margin-top: 50px;
+        width: 100%;
+    }
+
+    #edu_story .wrapper .content .mission_vision .mission p,
+    #edu_story .wrapper .content .mission_vision .vision p {
+        font-size: 14px;
+    }
+
+    #spotlight {
+        height: 60vh;
+    }
 }

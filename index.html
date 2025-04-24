@@ -6,24 +6,31 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Educare</title>
     <link rel="stylesheet" href="./css/style.css">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
     <script src="./js/script.js" defer></script>
 </head>
 
 <body>
-
-    <!-- header section -->
     <header>
         <div class="wrapper">
             <div class="logo">
                 <img src="/images/logo.png" alt="logo" />
             </div>
-            <nav>
+
+            <!-- Navigation -->
+            <nav class="desktop-nav">
                 <li><a href="#">About us</a></li>
-                <li><a href="#">Courses <span><img src="./images/dropdown.png" alt="dropdown"></span></a></li>
+                <li><a href="#">Courses <span><img src="./images/dropdown.png" alt="dropdown" /></span></a></li>
                 <li><a href="#">Careers</a></li>
                 <li><a href="#">News & Blog</a></li>
                 <li><a href="#">Payment</a></li>
             </nav>
+
+            <!-- Contact -->
             <div class="contact">
                 <div class="text_contact">
                     <div class="phone">
@@ -37,8 +44,30 @@
                 </div>
                 <button>Contact Us</button>
             </div>
+
+            <!-- Hamburger Menu Icon -->
+            <div class="menu-toggle" onclick="toggleMenu()">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+
+        </div>
+
+        <!-- Mobile Menu -->
+        <div class="mobile-menu" id="mobileMenu">
+            <li><a href="#">About us</a></li>
+            <li><a href="#">Courses</a></li>
+            <li><a href="#">Careers</a></li>
+            <li><a href="#">News & Blog</a></li>
+            <li><a href="#">Payment</a></li>
+            <div class="mobile-contact">
+                <div><img src="/images/PhoneDisconnect.png" alt="" /> +974 55555 3456</div>
+                <div><img src="/images/Envelope.png" alt="" /> info@educare.qa</div>
+            </div>
         </div>
     </header>
+
 
     <!-- spotlight section -->
 
@@ -198,55 +227,79 @@
         <div class="wrapper">
             <h5>Programs we offer <span>for Kids</span></h5>
 
-            <div class="kids_list">
-                <div class="kids_item">
-                    <div class="kids_left">
-                        <h6>English Grammar</h6>
-                        <p>Master the building blocks of writing and communication.</p>
-                        <div class="button-container">
-                            <button class="view-all-button">
-                                View All <span class="arrow">↗</span>
-                            </button>
+            <div class="kids_list swiper">
+                <div class="swiper-wrapper">
+                    <div class="kids_item swiper-slide">
+                        <div class="kids_left">
+                            <h6>English Grammar</h6>
+                            <p>Master the building blocks of writing and communication.</p>
+                            <div class="button-container">
+                                <button class="view-all-button">
+                                    View All <span class="arrow">↗</span>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="kids_right">
+                            <div class="kids_img">
+                                <img src="./images/abc.svg" alt="" />
+                            </div>
                         </div>
                     </div>
-                    <div class="kids_right">
-                        <div class="kids_img">
-                            <img src="./images/abc.svg" alt="">
+
+                    <div class="kids_item swiper-slide">
+                        <div class="kids_left">
+                            <h6>Craft Classes</h6>
+                            <p>Unleash creativity with hands-on projects and artistic fun.</p>
+                            <div class="button-container">
+                                <button class="view-all-button">
+                                    View All <span class="arrow">↗</span>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="kids_right">
+                            <div class="kids_img">
+                                <img src="./images/abc.svg" alt="" />
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="kids_item swiper-slide">
+                        <div class="kids_left">
+                            <h6>Art and Painting</h6>
+                            <p>Express yourself through colors, sketches, and designs</p>
+                            <div class="button-container">
+                                <button class="view-all-button">
+                                    View All <span class="arrow">↗</span>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="kids_right">
+                            <div class="kids_img">
+                                <img src="./images/abc.svg" alt="" />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="kids_item swiper-slide">
+                        <div class="kids_left">
+                            <h6>Art and Painting</h6>
+                            <p>Express yourself through colors, sketches, and designs</p>
+                            <div class="button-container">
+                                <button class="view-all-button">
+                                    View All <span class="arrow">↗</span>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="kids_right">
+                            <div class="kids_img">
+                                <img src="./images/abc.svg" alt="" />
+                            </div>
                         </div>
                     </div>
                 </div>
-                <div class="kids_item">
-                    <div class="kids_left">
-                        <h6>Craft Classes</h6>
-                        <p>Unleash creativity with hands-on projects and artistic fun.</p>
-                        <div class="button-container">
-                            <button class="view-all-button">
-                                View All <span class="arrow">↗</span>
-                            </button>
-                        </div>
-                    </div>
-                    <div class="kids_right">
-                        <div class="kids_img">
-                            <img src="./images/abc.svg" alt="">
-                        </div>
-                    </div>
-                </div>
-                <div class="kids_item">
-                    <div class="kids_left">
-                        <h6>Art and Painting</h6>
-                        <p>Express yourself through colors, sketches, and designs</p>
-                        <div class="button-container">
-                            <button class="view-all-button">
-                                View All <span class="arrow">↗</span>
-                            </button>
-                        </div>
-                    </div>
-                    <div class="kids_right">
-                        <div class="kids_img">
-                            <img src="./images/abc.svg" alt="">
-                        </div>
-                    </div>
-                </div>
+
+                <!-- Navigation -->
+                <div class="swiper-button-prev"></div>
+                <div class="swiper-button-next"></div>
             </div>
         </div>
     </div>
@@ -257,45 +310,41 @@
     <div id="subjects">
         <div class="wrapper">
             <h5>Subjects We <span>Teach</span></h5>
-            <div class="subjects-container">
-                <div class="subject-card">
-                    <div class="icon-area">
-                        <img src="./images/maths.svg" alt="Maths">
-                    </div>
-                    <p>Maths</p>
-                </div>
-                <div class="subject-card">
-                    <div class="icon-area">
-                        <img src="./images/physics.svg" alt="Physics">
-                    </div>
-                    <p>Physics</p>
-                </div>
-                <div class="subject-card">
-                    <div class="icon-area">
-                        <img src="./images/chemistry.svg" alt="Chemistry">
-                    </div>
-                    <p>Chemistry</p>
-                </div>
-                <div class="subject-card">
-                    <div class="icon-area">
-                        <img src="./images/bilogy.svg" alt="Biology">
-                    </div>
-                    <p>Biology</p>
-                </div>
-                <div class="subject-card">
-                    <div class="icon-area">
-                        <img src="./images/cs.svg" alt="Computer Science">
-                    </div>
-                    <p>Computer Science</p>
-                </div>
-                <div class="subject-card">
-                    <div class="icon-area">
-                        <img src="./images/eng.svg" alt="English">
-                    </div>
-                    <p>English</p>
-                </div>
-            </div>
 
+            <!-- Swiper container -->
+            <div class="swiper subjects-swiper">
+                <div class="swiper-wrapper subjects-container">
+                    <!-- Each subject card is a swiper-slide -->
+                    <div class="swiper-slide subject-card">
+                        <div class="icon-area"><img src="./images/maths.svg" alt="Maths"></div>
+                        <p>Maths</p>
+                    </div>
+                    <div class="swiper-slide subject-card">
+                        <div class="icon-area"><img src="./images/physics.svg" alt="Physics"></div>
+                        <p>Physics</p>
+                    </div>
+                    <div class="swiper-slide subject-card">
+                        <div class="icon-area"><img src="./images/chemistry.svg" alt="Chemistry"></div>
+                        <p>Chemistry</p>
+                    </div>
+                    <div class="swiper-slide subject-card">
+                        <div class="icon-area"><img src="./images/bilogy.svg" alt="Biology"></div>
+                        <p>Biology</p>
+                    </div>
+                    <div class="swiper-slide subject-card">
+                        <div class="icon-area"><img src="./images/cs.svg" alt="Computer Science"></div>
+                        <p>Computer Science</p>
+                    </div>
+                    <div class="swiper-slide subject-card">
+                        <div class="icon-area"><img src="./images/eng.svg" alt="English"></div>
+                        <p>English</p>
+                    </div>
+                </div>
+
+                <!-- Navigation buttons -->
+                <div class="swiper-button-prev"></div>
+                <div class="swiper-button-next"></div>
+            </div>
         </div>
     </div>
 
@@ -395,42 +444,67 @@
         <div class="wrapper">
             <div class="head">
                 <h3>Master in IELTS, TOEFL Exams</h3>
-                <button>view All </button>
+                <button>View All</button>
             </div>
-            <div class="categories">
-                <ul>
-                    <li>
-                        <div class="img_container">
-                            <img src="./images/IELTS-Preparation.jpg" alt="IELTS-Preparation">
+            <div class="swiper toeflSlider">
+                <div class="swiper-wrapper">
+
+                    <div class="swiper-slide">
+                        <div class="course_card">
+                            <div class="img_container">
+                                <img src="./images/IELTS-Preparation.jpg" alt="IELTS-Preparation" />
+                            </div>
+                            <h4>IELTS Preparation</h4>
+                            <p>Focus on all four sections: Listening, Reading, Writing, and Speaking.</p>
                         </div>
-                        <h4>IELTS Preparation </h4>
-                        <p>Focus on all four sections: Listening, Reading, Writing, and Speaking.</p>
-                    </li>
-                    <li>
-                        <div class="img_container">
-                            <img src="./images/TOEFL-Mastery.jpg" alt="TOEFL-Mastery">
+                    </div>
+
+                    <div class="swiper-slide">
+                        <div class="course_card">
+                            <div class="img_container">
+                                <img src="./images/TOEFL-Mastery.jpg" alt="TOEFL-Mastery" />
+                            </div>
+                            <h4>TOEFL Mastery</h4>
+                            <p>Comprehensive coverage of Reading, Listening, Speaking, and Writing sections.</p>
                         </div>
-                        <h4>TOEFL Mastery</h4>
-                        <p>Comprehensive coverage of Reading, Listening, Speaking, and Writing sections.</p>
-                    </li>
-                    <li>
-                        <div class="img_container">
-                            <img src="./images/PTE-Academic-Course.jpg" alt="PTE-Academic-Course">
+                    </div>
+
+                    <div class="swiper-slide">
+                        <div class="course_card">
+                            <div class="img_container">
+                                <img src="./images/PTE-Academic-Course.jpg" alt="PTE-Academic-Course" />
+                            </div>
+                            <h4>PTE Academic Course</h4>
+                            <p>Time-saving strategies and practice tests with instant feedback.</p>
                         </div>
-                        <h4>PTE Academic Course</h4>
-                        <p>Time-saving strategies and practice tests with instant feedback.</p>
-                    </li>
-                    <li>
-                        <div class="img_container">
-                            <img src="./images/Cambridge-English-(CAE).jpg" alt="Cambridge-English-(CAE)">
+                    </div>
+
+                    <div class="swiper-slide">
+                        <div class="course_card">
+                            <div class="img_container">
+                                <img src="./images/Cambridge-English-(CAE).jpg" alt="Cambridge-English-(CAE)" />
+                            </div>
+                            <h4>Cambridge English (CAE)</h4>
+                            <p>Preparation for high-level English skills in Listening, Speaking, Reading, and Writing.
+                            </p>
                         </div>
-                        <h4>Cambridge English (CAE)</h4>
-                        <p>Preparation for high-level English skills in Listening, Speaking, Reading, and Writing.</p>
-                    </li>
-                </ul>
+                    </div>
+
+                    <div class="swiper-slide">
+                        <div class="course_card">
+                            <div class="img_container">
+                                <img src="./images/Cambridge-English-(CAE).jpg" alt="Cambridge-English-(CAE)" />
+                            </div>
+                            <h4>Cambridge English (CAE)</h4>
+                            <p>Preparation for high-level English skills in Listening, Speaking, Reading, and Writing.
+                            </p>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
+
 
     <!-- testiomonial section -->
 
@@ -576,14 +650,14 @@
 
     <footer class="footer">
         <div class="wrapper">
-            <div class="footer-content">
-                <div class="footer-column">
+            <div class="footer_content">
+                <div class="footer_column">
                     <h2 class="logo">
-                        <img src="./images/logo.png" alt="">
+                        <img src="./images/logo.png" alt="logo">
                     </h2>
                 </div>
 
-                <div class="footer-column">
+                <div class="footer_column">
                     <h4>Navigation</h4>
                     <ul>
                         <li><a href="#">Home</a></li>
@@ -595,7 +669,7 @@
                     </ul>
                 </div>
 
-                <div class="footer-column">
+                <div class="footer_column">
                     <h4>Contact info</h4>
                     <ul style="text-decoration: underline;">
                         <li><a href="mailto:educare@gmail.com">educare@gmail.com</a></li>
@@ -613,15 +687,15 @@
 
                 <div class="qatar-map"></div>
 
-                <div class="footer-column">
+                <div class="footer_column">
                     <h4>Office Address</h4>
-                    <p>EducareEducation Center<br>Building 45, Al Sadd Street,<br>Doha, Qatar</p>
+                    <p class="text_location">EducareEducation Center<br>Building 45, Al Sadd Street,<br>Doha, Qatar</p>
                     <a href="#">View on Map</a>
                 </div>
             </div>
 
-            <div class="footer-bottom">
-                <p>© 2024 <a href="#">educare</a></p>
+            <div class="footer_bottom">
+                <p>©️ 2024 <a href="#">educare</a></p>
                 <p>Designed By Novindus Technologies</p>
                 <div class="policy-links">
                     <a href="#">Terms & Conditions</a>
